@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chess Master Analysis Dashboard</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="dashboard">
+            <div class="header">
+                <h1>Chess Master Analysis</h1>
+                <p>Comprehensive breakdown of your chess games with detailed statistics and insights</p>
+            </div>
+
+            <div class="game-navigation">
+                <button class="game-nav-btn active" data-game="1">
+                    <i class="fas fa-chess-pawn"></i> Sicilian Defense
+                </button>
+                <button class="game-nav-btn" data-game="2">
+                    <i class="fas fa-chess-queen"></i> Queen's Gambit
+                </button>
+                <button class="game-nav-btn" data-game="3">
+                    <i class="fas fa-chess-knight"></i> Alien Gambit
+                </button>
+            </div>
+
+            <!-- Game 1 Container -->
+            <div class="game-container active" id="game-1">
+                <div class="chess-section">
+                    <div class="chess-board-container">
+                        <iframe class="chess-board" src="https://lichess.org/embed/game/Hps74wcO?theme=auto&bg=auto#60" frameborder="0"></iframe>
+                    </div>
+
+                    <div class="game-info">
+                        <div class="game-header">
+                            <div class="game-title">
+                                <h2>Sicilian Defense: Najdorf Variation</h2>
+                                <div class="game-meta">
+                                    <span><i class="fas fa-chess"></i> Rated Blitz</span>
+                                    <span><i class="fas fa-clock"></i> 3+2</span>
+                                    <span><i class="fas fa-calendar-alt"></i> Apr 14, 2025</span>
+                                    <span><i class="fas fa-user"></i> 1650 vs 1580</span>
+                                </div>
+                            </div>
+                            <div class="game-result">
+                                <span class="tooltip">
+                                    <span class="result-badge win">Win</span>
+                                    <span class="tooltiptext">You won this game in 42 moves by checkmate</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="accuracy-meter">
+                            <h3>Game Accuracy</h3>
+                            <div class="accuracy-value">95%</div>
+                            <div class="meter">
+                                <div class="meter-fill" style="width: 95%"></div>
+                            </div>
+                            <div class="accuracy-labels">
+                                <span>Poor (<70%)</span>
+                                <span>Good (70-90%)</span>
+                                <span>Excellent (>90%)</span>
+                            </div>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <h3><i class="fas fa-arrows-alt-h"></i> Moves Played</h3>
+                                <p>42</p>
+                            </div>
+                            <div class="stat-card blunders">
+                                <h3><i class="fas fa-times-circle"></i> Blunders</h3>
+                                <p>0</p>
+                            </div>
+                            <div class="stat-card mistakes">
+                                <h3><i class="fas fa-exclamation-circle"></i> Mistakes</h3>
+                                <p>2</p>
+                            </div>
+                            <div class="stat-card best-move">
+                                <h3><i class="fas fa-star"></i> Best Moves</h3>
+                                <p>15</p>
+                            </div>
+                        </div>
+
+                        <div class="move-analysis">
+                            <h3><i class="fas fa-chart-line"></i> Key Moves Analysis</h3>
+                            <div class="move-list">
+                                <div class="move best">12. Nf3 <span class="eval">+1.2</span></div>
+                                <div class="move good">18. Bc4 <span class="eval">+0.8</span></div>
+                                <div class="move mistake">23. Qd2? <span class="eval">-0.5</span></div>
+                                <div class="move best">28. Rxe6! <span class="eval">+2.1</span></div>
+                                <div class="move good">35. Kf2 <span class="eval">+1.7</span></div>
+                                <div class="move best">40. Qh7# <span class="eval">Mate</span></div>
+                            </div>
+                        </div>
+
+                        <div class="opening-info">
+                            <h3><i class="fas fa-book"></i> Opening Information</h3>
+                            <p>The Sicilian Defense (B90 - Najdorf Variation) is one of the most complex and well-analyzed openings in chess. Characterized by the moves 1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6, it's known for creating asymmetrical positions that lead to dynamic play. The Najdorf is a favorite of many world champions including Fischer, Kasparov, and Carlsen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="screenshot-section">
+                    <h3><i class="fas fa-camera"></i> Critical Position Analysis</h3>
+                    <div class="screenshot-container">
+                        <img src="Screenshot 2025-04-14 195639.png" alt="Chess game analysis screenshot" class="screenshot" onclick="openModal(this)">
+                        <p class="screenshot-caption">Position after 28. Rxe6! - The winning move that secured a decisive advantage</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game 2 Container -->
+            <div class="game-container" id="game-2">
+                <div class="chess-section">
+                    <div class="chess-board-container">
+                        <iframe class="chess-board" src="https://lichess.org/embed/game/Hps74wcO?theme=auto&bg=auto#60" frameborder="0"></iframe>
+                    </div>
+
+                    <div class="game-info">
+                        <div class="game-header">
+                            <div class="game-title">
+                                <h2>Queen's Gambit Declined</h2>
+                                <div class="game-meta">
+                                    <span><i class="fas fa-chess"></i> Rated Rapid</span>
+                                    <span><i class="fas fa-clock"></i> 10+0</span>
+                                    <span><i class="fas fa-calendar-alt"></i> Apr 18, 2025</span>
+                                    <span><i class="fas fa-user"></i> 1720 vs 1750</span>
+                                </div>
+                            </div>
+                            <div class="game-result">
+                                <span class="tooltip">
+                                    <span class="result-badge win">Win</span>
+                                    <span class="tooltiptext">You won this game in 38 moves by resignation</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="accuracy-meter">
+                            <h3>Game Accuracy</h3>
+                            <div class="accuracy-value">96%</div>
+                            <div class="meter">
+                                <div class="meter-fill" style="width: 96%"></div>
+                            </div>
+                            <div class="accuracy-labels">
+                                <span>Poor (<70%)</span>
+                                <span>Good (70-90%)</span>
+                                <span>Excellent (>90%)</span>
+                            </div>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <h3><i class="fas fa-arrows-alt-h"></i> Moves Played</h3>
+                                <p>38</p>
+                            </div>
+                            <div class="stat-card blunders">
+                                <h3><i class="fas fa-times-circle"></i> Blunders</h3>
+                                <p>0</p>
+                            </div>
+                            <div class="stat-card mistakes">
+                                <h3><i class="fas fa-exclamation-circle"></i> Mistakes</h3>
+                                <p>1</p>
+                            </div>
+                            <div class="stat-card best-move">
+                                <h3><i class="fas fa-star"></i> Best Moves</h3>
+                                <p>21</p>
+                            </div>
+                        </div>
+
+                        <div class="move-analysis">
+                            <h3><i class="fas fa-chart-line"></i> Key Moves Analysis</h3>
+                            <div class="move-list">
+                                <div class="move best">14. Bb5 <span class="eval">+1.5</span></div>
+                                <div class="move good">19. Qe2 <span class="eval">+1.1</span></div>
+                                <div class="move best">25. Rxd7! <span class="eval">+2.3</span></div>
+                                <div class="move good">30. f4 <span class="eval">+1.8</span></div>
+                                <div class="move best">35. Qg6+ <span class="eval">+4.2</span></div>
+                            </div>
+                        </div>
+
+                        <div class="opening-info">
+                            <h3><i class="fas fa-book"></i> Opening Information</h3>
+                            <p>The Queen's Gambit Declined (D30) is a classical response to 1.d4. Characterized by the moves 1.d4 d5 2.c4 e6, it focuses on solid pawn structures and piece development. Black temporarily gives up the center to later challenge it, often leading to strategic battles. Popularized by players like Capablanca and Karpov, it's known for its solid positional play.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="screenshot-section">
+                    <h3><i class="fas fa-camera"></i> Critical Position Analysis</h3>
+                    <div class="screenshot-container">
+                        <img src="Screenshot 2025-04-18 211349.png" alt="Chess game analysis screenshot" class="screenshot" onclick="openModal(this)">
+                        <p class="screenshot-caption">Position after 25. Rxd7! - Sacrificing the exchange to open up the king</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game 3 Container -->
+            <div class="game-container" id="game-3">
+                <div class="chess-section">
+                    <div class="chess-board-container">
+                        <iframe class="chess-board" src="https://lichess.org/embed/game/HVcuvXPk?theme=auto&bg=auto#52" frameborder="0"></iframe>
+                    </div>
+
+                    <div class="game-info">
+                        <div class="game-header">
+                            <div class="game-title">
+                                <h2>Alien Gambit</h2>
+                                <div class="game-meta">
+                                    <span><i class="fas fa-chess"></i> Rated Bullet</span>
+                                    <span><i class="fas fa-clock"></i> 1+0</span>
+                                    <span><i class="fas fa-calendar-alt"></i> May 2, 2025</span>
+                                    <span><i class="fas fa-user"></i> 1850 vs 1820</span>
+                                </div>
+                            </div>
+                            <div class="game-result">
+                                <span class="tooltip">
+                                    <span class="result-badge win">Win</span>
+                                    <span class="tooltiptext">You won this game in 26 moves by timeout</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="accuracy-meter">
+                            <h3>Game Accuracy</h3>
+                            <div class="accuracy-value">87%</div>
+                            <div class="meter">
+                                <div class="meter-fill" style="width: 87%"></div>
+                            </div>
+                            <div class="accuracy-labels">
+                                <span>Poor (<70%)</span>
+                                <span>Good (70-90%)</span>
+                                <span>Excellent (>90%)</span>
+                            </div>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <h3><i class="fas fa-arrows-alt-h"></i> Moves Played</h3>
+                                <p>26</p>
+                            </div>
+                            <div class="stat-card blunders">
+                                <h3><i class="fas fa-times-circle"></i> Blunders</h3>
+                                <p>1</p>
+                            </div>
+                            <div class="stat-card mistakes">
+                                <h3><i class="fas fa-exclamation-circle"></i> Mistakes</h3>
+                                <p>3</p>
+                            </div>
+                            <div class="stat-card best-move">
+                                <h3><i class="fas fa-star"></i> Best Moves</h3>
+                                <p>12</p>
+                            </div>
+                        </div>
+
+                        <div class="move-analysis">
+                            <h3><i class="fas fa-chart-line"></i> Key Moves Analysis</h3>
+                            <div class="move-list">
+                                <div class="move best">5. f4 <span class="eval">+0.9</span></div>
+                                <div class="move mistake">8. Qe2? <span class="eval">-0.7</span></div>
+                                <div class="move blunder">15. Bxh7+? <span class="eval">-2.3</span></div>
+                                <div class="move good">18. Qd3 <span class="eval">+0.5</span></div>
+                                <div class="move mistake">22. Rd1? <span class="eval">-1.5</span></div>
+                            </div>
+                        </div>
+
+                        <div class="opening-info">
+                            <h3><i class="fas fa-book"></i> Opening Information</h3>
+                            <p>The Alien Gambit is an unorthodox opening that begins with 1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 b5 5.Bb3 Na5 6.Nxe5. This aggressive gambit sacrifices a pawn for rapid development and attacking chances. While not theoretically sound at the highest levels, it can be dangerous in blitz and bullet games where opponents may not be prepared for its unusual ideas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="screenshot-section">
+                    <h3><i class="fas fa-camera"></i> Critical Position Analysis</h3>
+                    <div class="screenshot-container">
+                        <img src="Screenshot 2025-05-02 013505.png" alt="Chess game analysis screenshot" class="screenshot" onclick="openModal(this)">
+                        <p class="screenshot-caption">Position after 15. Bxh7+? - The speculative sacrifice that didn't pay off</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Analyzed on <span id="current-date"></span> | Powered by <a href="https://lichess.org" target="_blank">Lichess</a> | <a href="#" id="export-btn"><i class="fas fa-file-pdf"></i> Export as PDF</a> | <a href="#" id="share-btn"><i class="fas fa-share-alt"></i> Share Analysis</a></p>
+            </div>
+        </div>
+
+        <!-- Modal for enlarged screenshot -->
+        <div id="screenshot-modal" class="modal">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <img id="modal-image" src="" alt="Enlarged screenshot">
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
